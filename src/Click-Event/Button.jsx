@@ -1,20 +1,16 @@
+import { useState} from 'react';
+
 const Button = () => {
+    const [isliked, setLiked] = useState(false);
 
-    let count = 0
-
-    const handleClick = (name) => {
-        if(count < 3) {
-            count++;
-            console.log(`${name} you clicked me ${count} time/s`);
-        }
-        else{
-            console.log(`${name} stop clicking me😏`);
-        }
-
+    const handleClick = () => {
+        setLiked(!isliked)
     }
-    return(
-        <button id="btn" onClick={() => handleClick("vue")}>Click Me!😃</button>
-        
+
+    return (
+        <div>
+            <button onClick={() => setLiked(!isliked)}>{isliked ? 'liked👍' : 'like' }</button>
+        </div>
     )
 }
 

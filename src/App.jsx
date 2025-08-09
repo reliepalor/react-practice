@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import  {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Header from './component/Header.jsx'
 import Footer from './component/Footer.jsx'
 import Info from './Information/Info.jsx'
@@ -11,9 +12,47 @@ import Courses from './component/Courses.jsx'
 import Books from './Rendering-List/Books.jsx'
 import Button from './Click-Event/Button.jsx'
 import ProfilePicture from './Click-Event/ProfilePicture.jsx'
+import TaskList from './Activity/TaskList.jsx'
+import ReportList from './Activity/ReportList.jsx'
+
+//-------------useState
+import Sample1 from './useState/Sample1.jsx'
+import Counter from './useState/Counter.jsx'
+import Todo from './useState/ToDo.jsx'
+import SampleOnChange from './useState/onChange.jsx'
+
 
 
 const App = () => {
+  const [works, setWorks] = useState([
+    {id: 1, activity: "Revise Chapter 1",type: "Manuscript",done: false },
+    {id: 2, activity: "Fixing Login Page",type: "System",done: false },
+    {id: 3, activity: "Designing UI",type: "System",done: false },
+  ]);
+
+  const handleWorkDone = (id) =>{
+    const updated = works.map(work => 
+      work.id === id ? { ...work, done : true} : work 
+    );
+    console.log(updated);
+    setWorks(updated);
+  }
+
+  const [tasks, setTasks] = useState([
+    { id: 1, name: 'Buy milk', category: 'Personal', done: false },
+    { id: 2, name: 'React activity', category: 'Work', done: false },
+    { id: 3, name: 'Call mom', category: 'Personal', done: false },
+    { id: 4, name: 'Cook Food', category: 'Work', done: false },
+  ]);
+
+  const handleMarkDone = (id) => {
+    const updated = tasks.map(task =>
+      task.id === id ? { ...task, done: true } : task
+    );
+    setTasks(updated);
+  };
+
+
     const languages = [{id: 1, name:"HTML", stats: 75},
                         {id: 2, name:"CSS", stats: 60},
                         {id: 3, name:"Javascript", stats: 50},
@@ -37,20 +76,34 @@ const App = () => {
                         {id: 3, name: "Java Programming ", author: "Piyush Choudhary"}
     ];
 
-    const [isVisible, setVisible] = useState(true)
-
+    const [isVisible, setVisible] = useState(false)
     const handleClick = () => { 
       setVisible(false)
     }
 
+    const [isListVisible, setListVisible] = useState(false)
+    const handleListClick = () => {
+      setListVisible(false)
+    }
+
+    const [isReportVisible, setReportVisible] = useState(false)
+    const handleReportClick = () => {
+      setReportVisible(false)
+    }
+
+    const [isVisible2, setVisible2] = useState(false)
+    const handleClick2 = () => { 
+      setVisible2(false)
+    }
   
   return (
     <div>
-        <Header />
-        <div>
-          <h2> My First React</h2>
-          <button onClick={() => setVisible(!isVisible)}>{isVisible ? 'Hide' : 'Show'}</button>
-        </div>
+      <Header />
+      <div style={{display:'flex', justifyContent:'center', gap:'10px'}}>
+        <h2>Components , Props</h2>
+        <button onClick={() => setVisible(!isVisible)}>{isVisible ? 'Hide' : 'Show'}</button>
+      </div>
+     
         
       {isVisible && 
       <div>
@@ -81,29 +134,77 @@ const App = () => {
             {Year3.length > 0 && <Courses items={Year3} year="3" sem="2nd"/>}
           </div>
         
-        <div>
-          {bookShelf1.length > 0 && <Books items={bookShelf1} section="CICS"/>}
-        </div>
+          <div>
+            {bookShelf1.length > 0 && <Books items={bookShelf1} section="CICS"/>}
+          </div>
         </div>
 
-        <div className='list-con' style={{padding: "10px"}}>
+        <div style={{display:'flex', justifyContent:'center'}}>
+          <ProfilePicture />
+          <ProfilePicture />
+          
+        </div>
+      <Button/>
 
-          <ProfilePicture />
-          <ProfilePicture />
-          <ProfilePicture />
-          <ProfilePicture />
+      <div className='list-con' style={{padding:'10px'}}>
+        <div style={{display:'flex', justifyContent:'space-between', marginBottom:'10px'}}>
+          <h2>📝 To-Do List</h2>
+          <button
+          onClick={() => setListVisible(!isListVisible)}>{isListVisible ? 'Hide' : 'Show'}</button>
+        </div>
+
+        {isListVisible && <TaskList tasks={tasks} onMarkDone={handleMarkDone} /> }
+        
+      </div>
 
       
+      
+      <div className='list-con' style={{padding:'10px'}}>
+         <div style={{display:'flex', justifyContent:'space-between', marginBottom:'10px'}}>
+          <h2>📝 Progress Report</h2>
+        <button onClick={() => setReportVisible(!isReportVisible)}>{isReportVisible ? 'Hide' : 'Show'}</button>
         </div>
+        {
+          isReportVisible && 
+        <ReportList works={works} onMarkComplete={handleWorkDone} />
+
+        }
+      </div>
+
+      <br /><hr /><br />
+      
 
 
-      <Footer />
       </div>
       }
+
+      <div >
+        <div style={{display:'flex', justifyContent:'center', gap:'10px'}}>
+          <h2>UseEffect</h2>
+          <button onClick={() => setVisible2(!isVisible2)}>{isVisible2 ? 'Hide' : 'Show'}</button>
+        </div>
+        
+        {isVisible2 &&
+          <div className='list-con'>
+            <Sample1/>
+          <hr />
+            <Counter/>
+            <Todo/>
+          <hr />
+            <SampleOnChange/>
+          </div>
+        }
+
+
+
+      </div>
+      <Footer />
     </div>
 
   )
+
 }
+
 
 
 
