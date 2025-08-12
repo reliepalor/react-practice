@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 
 const LikeButton = () => {
-  // 1. State for whether it’s liked
   const [liked, setLiked] = useState(false);
-  
-  // 2. State for count of likes
   const [count, setCount] = useState(0);
+  const [isDark, setIsDark] = useState(false);
 
-  // 3. Handle clicking the button
+  const light = "white";
+  const dark = "black";
+
+  const handeTheme = () => {
+    setIsDark(!isDark)
+  }
+
   const handleClick = () => {
     if (liked) {
       setLiked(false);
@@ -20,10 +24,23 @@ const LikeButton = () => {
 
   return (
     <div>
+
       <button onClick={handleClick}>
         {liked ? 'Unlike' : 'Like'}
       </button>
       <p>Likes: {count}</p>
+      <hr />
+
+      <button onClick={handeTheme}>
+        {isDark ? "Light Mode" : "Dark Mode"}
+      </button>
+      <div style={{
+            backgroundColor: isDark ? dark : light,
+            color: isDark ? light : dark,
+        }}>
+        <p>asd</p>
+        <p>asd</p>
+      </div>
     </div>
   );
 };

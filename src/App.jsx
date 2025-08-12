@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import "./index.css";
 import './App.css'
 import  {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Header from './component/Header.jsx'
@@ -12,18 +13,27 @@ import Courses from './component/Courses.jsx'
 import Books from './Rendering-List/Books.jsx'
 import Button from './Click-Event/Button.jsx'
 import ProfilePicture from './Click-Event/ProfilePicture.jsx'
-import TaskList from './Activity/TaskList.jsx'
-import ReportList from './Activity/ReportList.jsx'
+
 
 //-------------useState
 import Sample1 from './useState/Sample1.jsx'
 import Counter from './useState/Counter.jsx'
 import Todo from './useState/ToDo.jsx'
 import SampleOnChange from './useState/onChange.jsx'
+import Updater from './useState/UpdaterFunction.jsx'
+
+
+//-------------Activity
+import TaskList from './Activity/TaskList.jsx'
+import ReportList from './Activity/ReportList.jsx'
+import ColorPicker from './Activity/ColorPicker.jsx'
 
 
 
 const App = () => {
+
+
+
   const [works, setWorks] = useState([
     {id: 1, activity: "Revise Chapter 1",type: "Manuscript",done: false },
     {id: 2, activity: "Fixing Login Page",type: "System",done: false },
@@ -98,7 +108,8 @@ const App = () => {
   
   return (
     <div>
-      <Header />
+        <Header />
+
       <div style={{display:'flex', justifyContent:'center', gap:'10px'}}>
         <h2>Components , Props</h2>
         <button onClick={() => setVisible(!isVisible)}>{isVisible ? 'Hide' : 'Show'}</button>
@@ -192,10 +203,12 @@ const App = () => {
             <Todo/>
           <hr />
             <SampleOnChange/>
+            <hr />
+            <ColorPicker/>
+            <hr />
+            <Updater/>
           </div>
         }
-
-
 
       </div>
       <Footer />

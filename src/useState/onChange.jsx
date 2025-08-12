@@ -8,11 +8,17 @@ const SampleOnChange = () => {
     const [Liked, setLiked] = useState(false);
     const [payment, setPayment] = useState('');
     const [shipping, setShipping] = useState('')
+    const [size, setSize] = useState('')
+    const [isDark, setDark] = useState('false')
 
-    const handlePaymentChange = (event) => {
-        setPayment(event.target.value)
-    
+    const light = 'white';
+    const dark = 'black';
+
+    const handleTheme = () => {
+        setDark(false)
     }
+
+
 
     const handleLiked = () => {
         setLiked(!Liked);
@@ -24,7 +30,10 @@ const SampleOnChange = () => {
     } 
     const handleComment = () => {
         if(comment.trim() === '') return;
-        setWriteComment([...writeComments, {id: Date.now(), text: comment, done: false}]);
+        setWriteComment([...writeComments, 
+            {id: Date.now(), 
+            text: comment, 
+            done: false}]);
         setComment('');
     }
 
@@ -36,12 +45,22 @@ const SampleOnChange = () => {
         setQuantity(event.target.value)
     }
 
+    const handlePaymentChange = (event) => {
+        setPayment(event.target.value)
+    
+    }
+
     const handleShippingChange = (event) => {
         setShipping(event.target.value)
     }
 
+    const handleSizeChange = (event) => {
+        setSize(event.target.value)
+    }
+
     return (
         <div>
+            <section>
             <h2>📚Search Books</h2>
             <input value={name} onChange={handleNameChange} />
             <p>Name: {name}</p>
@@ -72,27 +91,33 @@ const SampleOnChange = () => {
                     </li>
                 ))}
             </ul>
-
+            </section>
         <hr />
 
-        <select name="" id="" value={payment} onChange={handlePaymentChange}>
-            <option value="">Select Payment Method</option>
-            <option value="Gcash">Gcash</option>
-            <option value="PayMaya">PayMaya</option>
-            <option value="COD">Cash on Delivery</option>
-        </select>
-        <p>Payment: {payment}</p>
+            <section>
+                <select name="" id="" value={payment} onChange={handlePaymentChange}>
+                    <option value="">Select Payment Method</option>
+                    <option value="Gcash">Gcash</option>
+                    <option value="PayMaya">PayMaya</option>
+                    <option value="COD">Cash on Delivery</option>
+                </select>
+                <p>Payment: {payment}</p>
+                <hr />
+                <label htmlFor="">
+                    <input type="radio" value="pickup" checked={shipping === 'pickup'} onChange={handleShippingChange}/>
+                    pick up
+                </label>
+                <br />
+                <label htmlFor="">
+                    <input type="radio" value="Delivery" checked={shipping === 'Delivery'} onChange={handleShippingChange}/>
+                    Delivery
+                </label>
+                <p>Shipping: {shipping}</p>
+            </section>
 
-        <label htmlFor="">
-                <input type="radio" value="pickup" checked={shipping === 'pickup'} onChange={handleShippingChange}/>
-            pick up
-        </label>
-        <br />
-         <label htmlFor="">
-                <input type="radio" value="Delivery" checked={shipping === 'Delivery'} onChange={handleShippingChange}/>
-            Delivery
-        </label>
-        <p>Shipping: {shipping}</p>
+            <hr />
+
+
         </div>
     )
 }
