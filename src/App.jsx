@@ -21,6 +21,9 @@ import Counter from './useState/Counter.jsx'
 import Todo from './useState/ToDo.jsx'
 import SampleOnChange from './useState/onChange.jsx'
 import Updater from './useState/UpdaterFunction.jsx'
+import Objects from './useState/Objects.jsx';
+import Arrays from './useState/Arrays.jsx';
+
 
 
 //-------------Activity
@@ -108,7 +111,9 @@ const App = () => {
   
   return (
     <div>
+       <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <Header />
+       </div>
 
       <div style={{display:'flex', justifyContent:'center', gap:'10px'}}>
         <h2>Components , Props</h2>
@@ -207,6 +212,13 @@ const App = () => {
             <ColorPicker/>
             <hr />
             <Updater/>
+            <hr />
+            <p>Update Object using State</p>
+            <Objects/>
+            <hr />
+            <p>Update Array of Objects using State</p>
+            <Arrays/>
+            <hr />
           </div>
         }
 
