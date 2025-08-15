@@ -27,10 +27,9 @@ import Arrays from './useState/Arrays.jsx';
 
 
 //-------------Activity
-import TaskList from './Activity/TaskList.jsx'
 import ReportList from './Activity/ReportList.jsx'
 import ColorPicker from './Activity/ColorPicker.jsx'
-
+import TodoList from './Activity/TodoList.jsx';
 
 
 const App = () => {
@@ -205,7 +204,7 @@ const App = () => {
             <Sample1/>
           <hr />
             <Counter/>
-            <Todo/>
+            
           <hr />
             <SampleOnChange/>
             <hr />
@@ -219,8 +218,15 @@ const App = () => {
             <p>Update Array of Objects using State</p>
             <Arrays/>
             <hr />
+            <Todo/>
           </div>
         }
+
+        <hr />
+        <div className='todolist-con'>
+          <h2>Activity</h2><hr />
+          <TodoList/>
+        </div>
 
       </div>
       <Footer />

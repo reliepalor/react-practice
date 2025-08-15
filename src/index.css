@@ -307,3 +307,71 @@ input[type="color"]{
   border-radius: 10px;
   border: 2px solid rgb(123, 123, 123);
 }
+/*TODO LIST -----------------------------*/
+
+.todolist-con{
+  background-color: white;
+  color: black;
+  padding: 10px;
+}
+
+.todo-list{
+  border: 1px solid black;
+}
+
+.input-con > input{
+  padding: 10px;
+  background-color: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 15rem;
+  border-radius: 10px;
+  color: black;
+}
+ol{
+  padding: 10px;
+  list-style-type: none;
+}
+.text{
+  display: flex;
+  align-items: center;
+  width: 20%;
+}
+.delete-btn{
+  background-color: rgba(196, 196, 196, 0.285);
+  color: rgb(164, 0, 0);
+  border: 1px solid gray;
+  transition: .4s ease;
+}
+.delete-btn:hover{
+    background-color: rgba(255, 0, 0, 0.2);
+}
+.moveup-btn{
+ background-color: rgba(196, 196, 196, 0.285);
+  color: rgb(164, 0, 0);
+  border: 1px solid gray;
+}
+.movedown-btn{
+ background-color: rgba(196, 196, 196, 0.285);
+  color: rgb(164, 0, 0);
+  border: 1px solid gray;
+}
+.moveup-btn:hover{
+    background-color: rgba(80, 118, 255, 0.2);
+}
+.movedown-btn:hover{
+    background-color: rgba(80, 118, 255, 0.2);
+}
+.todo-list > ol > li{
+  border-bottom:1px solid black;
+  padding: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+}
+.button-con{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}

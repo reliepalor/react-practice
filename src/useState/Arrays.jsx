@@ -1,6 +1,7 @@
 import {useState} from 'react';
 
 const Arrays = () => {
+
     const [cars, setCars] = useState([])
     const [carYear, setCarYear] = useState(new Date().getFullYear()); 
     const [carMake, setCarMake] = useState();
@@ -18,7 +19,7 @@ const Arrays = () => {
     }
 
     const handleRemoveCar = (index) => {
-        setCars(c => c.filter((_, i  ) => i !== index));
+        setCars(c => c.filter((_, i) => i !== index));
     }
     const handleYearChange = (event) => {
         setCarYear(event.target.value);
