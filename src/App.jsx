@@ -13,8 +13,6 @@ import Courses from './component/Courses.jsx'
 import Books from './Rendering-List/Books.jsx'
 import Button from './Click-Event/Button.jsx'
 import ProfilePicture from './Click-Event/ProfilePicture.jsx'
-
-
 //-------------useState
 import Sample1 from './useState/Sample1.jsx'
 import Counter from './useState/Counter.jsx'
@@ -23,13 +21,12 @@ import SampleOnChange from './useState/onChange.jsx'
 import Updater from './useState/UpdaterFunction.jsx'
 import Objects from './useState/Objects.jsx';
 import Arrays from './useState/Arrays.jsx';
-
-
-
 //-------------Activity
 import ReportList from './Activity/ReportList.jsx'
 import ColorPicker from './Activity/ColorPicker.jsx'
 import TodoList from './Activity/TodoList.jsx';
+//-------------useEffect
+import Component1 from './useEffect/Component1.jsx';
 
 
 const App = () => {
@@ -106,6 +103,11 @@ const App = () => {
     const [isVisible2, setVisible2] = useState(false)
     const handleClick2 = () => { 
       setVisible2(false)
+    }
+
+    const [isActivityHide, setActivityHide] = useState(false);
+    const handleActivityHide = () => {
+      setActivityHide(false);
     }
   
   return (
@@ -224,10 +226,21 @@ const App = () => {
 
         <hr />
         <div className='todolist-con'>
-          <h2>Activity</h2><hr />
-          <TodoList/>
-        </div>
+          <div className='flex justify-between'>
+            <h2 className='text-4xl'>Activity</h2>
+            <button onClick={() => setActivityHide(!isActivityHide)} className='text-white '>{isActivityHide ? 'Hide' : 'Show'}</button>
+          </div>
 
+          <hr />
+          {isActivityHide && <TodoList/>}
+        </div>
+      </div>
+
+      <br /><hr />
+
+      <div className='border border-gray-300 mt-5 p-2 rounded-lg'>
+        <h2 className='text-2xl bg-gray-600'>useEffect</h2>
+        <Component1 />
       </div>
       <Footer />
     </div>
