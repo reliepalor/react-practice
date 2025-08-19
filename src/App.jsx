@@ -27,6 +27,7 @@ import ColorPicker from './Activity/ColorPicker.jsx'
 import TodoList from './Activity/TodoList.jsx';
 //-------------useEffect
 import Component1 from './useEffect/Component1.jsx';
+import StopWatch from './Activity/StopWatch.jsx';
 
 
 const App = () => {
@@ -242,6 +243,10 @@ const App = () => {
         <h2 className='text-2xl bg-gray-600'>useEffect</h2>
         <Component1 />
       </div>
+
+      <br />
+      <div className='border '></div>
+      <StopWatch/>
       <Footer />
     </div>
 

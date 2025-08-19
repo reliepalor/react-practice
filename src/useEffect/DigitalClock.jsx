@@ -32,13 +32,23 @@ const DigitalClock = () => {
     }
   return (
     <div>
-      <div className='w-full flex justify-center items-center flex-col'>
-            <img src={Sunset} alt="" className=''/>  
-            <div className='relative top-[-13rem] w-full bg-white/30 shadow-lg p-10 rounded-lg w-[70%]'>
-                <p className='sm:text-xl md:text-md lg:text-7xl text-center font-bold text-gray-800 duration-500 ease-in-out'>Digital Clock</p>
-                <p className='mt-5 sm:text-xl md:text-md lg:text-7xl text-center font-bold text-gray-800 duration-500 ease-in-out'>{formatTime()}</p>
+        <div className="w-full flex flex-col items-center justify-center relative">
+        {/* Background Image */}
+        <img src={Sunset} alt="Sunset" className="w-full h-auto object-cover" />
+
+        {/* Overlay Card */}
+        <div className="absolute inset-0 flex items-center justify-center">
+            <div className="bg-white/30 shadow-lg p-6 sm:p-8 md:p-10 rounded-2xl w-[90%] sm:w-[80%] md:w-[70%] max-w-3xl">
+            <p className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center font-bold text-gray-800 transition duration-500 ease-in-out">
+                Digital Clock
+            </p>
+            <p className="mt-5 text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-center font-bold text-gray-800 transition duration-500 ease-in-out">
+                {formatTime()}
+            </p>
             </div>
-       </div>
+        </div>
+        </div>
+
  
     </div>
 
