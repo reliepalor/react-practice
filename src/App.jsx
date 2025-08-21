@@ -110,6 +110,12 @@ const App = () => {
     const handleActivityHide = () => {
       setActivityHide(false);
     }
+
+    const [isuseEffect, setUseEffect] = useState(false)
+    const handleUseEffect = () => {
+      setUseEffect(false)
+    }
+
   
   return (
     <div>
@@ -198,7 +204,7 @@ const App = () => {
 
       <div >
         <div style={{display:'flex', justifyContent:'center', gap:'10px'}}>
-          <h2>UseEffect</h2>
+          <h2>UseState</h2>
           <button onClick={() => setVisible2(!isVisible2)}>{isVisible2 ? 'Hide' : 'Show'}</button>
         </div>
         
@@ -239,10 +245,16 @@ const App = () => {
 
       <br /><hr />
 
-      <div className='border border-gray-300 mt-5 p-2 rounded-lg'>
+      <div className='flex justify-around'>
         <h2 className='text-2xl bg-gray-600'>useEffect</h2>
+        <button onClick={() => setUseEffect(!isuseEffect)}>{!isuseEffect ? 'Hide' : 'Show'}</button>
+      </div>
+
+      {isuseEffect &&
+      <div className='border border-gray-300 mt-5 p-2 rounded-lg'>
         <Component1 />
       </div>
+      }
 
       <br />
       <div className='border '></div>
