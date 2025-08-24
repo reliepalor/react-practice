@@ -2,35 +2,36 @@ import { useEffect, useState } from 'react'
 import "./index.css";
 import './App.css'
 import  {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Header from './component/Header.jsx'
-import Footer from './component/Footer.jsx'
-import Info from './Information/Info.jsx'
-import Card from './component/Card.jsx'
-import Student from './component/Student.jsx'
-import Greetings from './component/Greetings.jsx'
-import List from './component/List.jsx'
-import Courses from './component/Courses.jsx'
-import Books from './Rendering-List/Books.jsx'
-import Button from './Click-Event/Button.jsx'
-import ProfilePicture from './Click-Event/ProfilePicture.jsx'
+import Header from './Practice/component/Header.js'
+import Footer from './Practice/component/Footer.js'
+import Info from './Practice/Information/Info.jsx'
+import Card from './Practice/component/Card.js'
+import Student from './Practice/component/Student.js'
+import Greetings from './Practice/component/Greetings.js'
+import List from './Practice/component/List.js'
+import Courses from './Practice/component/Courses.jsx'
+import Books from './Practice/Rendering-List/Books.jsx'
+import Button from './Practice/Click-Event/Button.js'
+import ProfilePicture from './Practice/Click-Event/ProfilePicture.jsx'
 //-------------useState
-import Sample1 from './useState/Sample1.jsx'
-import Counter from './useState/Counter.jsx'
-import Todo from './useState/ToDo.jsx'
-import SampleOnChange from './useState/onChange.jsx'
-import Updater from './useState/UpdaterFunction.jsx'
-import Objects from './useState/Objects.jsx';
-import Arrays from './useState/Arrays.jsx';
+import Sample1 from './Practice/useState/Sample1.js'
+import Counter from './Practice/useState/Counter.js'
+import Todo from './Practice/useState/ToDo.js'
+import SampleOnChange from './Practice/useState/onChange.js'
+import Updater from './Practice/useState/UpdaterFunction.jsx'
+import Objects from './Practice/useState/Objects.js';
+import Arrays from './Practice/useState/Arrays.js';
 //-------------Activity
-import ReportList from './Activity/ReportList.jsx'
-import ColorPicker from './Activity/ColorPicker.jsx'
-import TodoList from './Activity/TodoList.jsx';
+import ReportList from './Practice/Activity/ReportList.js'
+import ColorPicker from './Practice/Activity/ColorPicker.js'
+import TodoList from './Practice/Activity/TodoList.jsx';
 //-------------useEffect
-import Component1 from './useEffect/Component1.jsx';
-import StopWatch from './Activity/StopWatch.jsx';
+import Component1 from './Practice/useEffect/Component1.js';
+import StopWatch from './Practice/Activity/StopWatch.js';
 
 
 const App = () => {
+
 
 
 
@@ -119,6 +120,7 @@ const App = () => {
   
   return (
     <div>
+    
        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         <Header />
        </div>
