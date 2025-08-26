@@ -23,7 +23,7 @@ const NavBar = () => {
             {/* Right: Nav Links */}
             <div className="flex items-center space-x-6">
               <NavLink to="/" className={linkClass}>Home</NavLink>
-              <NavLink to="/about" className={linkClass}>About</NavLink>
+              <NavLink to="/pets" className={linkClass}>Pets</NavLink>
               <NavLink to="/project" className={linkClass}>Project</NavLink>
               <NavLink to="/contact" className={linkClass}>Contact</NavLink>
             </div>

@@ -1,0 +1,54 @@
+{
+  "pets": [
+    {
+      "id": "1",
+      "name": "Buddy",
+      "price": 120,
+      "category": "Dog",
+      "breed": "Golden Retriever",
+      "color": "Golden",
+      "gender": "Male",
+      "description": "Friendly and energetic dog, great with families and kids."
+    },
+    {
+      "id": "2",
+      "name": "Luna",
+      "price": 80,
+      "category": "Cat",
+      "breed": "Persian",
+      "color": "White",
+      "gender": "Female",
+      "description": "Calm and affectionate cat, enjoys cozy naps and attention."
+    },
+    {
+      "id": "3",
+      "name": "Charlie",
+      "price": 50,
+      "category": "Rabbit",
+      "breed": "Holland Lop",
+      "color": "Brown",
+      "gender": "Male",
+      "description": "Playful little rabbit, loves hopping around and eating veggies."
+    },
+    {
+      "id": "4",
+      "name": "Coco",
+      "price": 200,
+      "category": "Bird",
+      "breed": "Macaw",
+      "color": "Blue & Yellow",
+      "gender": "Female",
+      "description": "Beautiful macaw with vibrant colors, very social and talkative."
+    },
+    {
+      "id": "5",
+      "name": "Milo",
+      "price": 100,
+      "category": "Dog",
+      "breed": "Beagle",
+      "color": "Tri-color",
+      "gender": "Male",
+      "description": "Curious and playful beagle, always ready for an adventure."
+    }
+  ]
+}
