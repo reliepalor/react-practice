@@ -8,7 +8,8 @@
       "breed": "Golden Retriever",
       "color": "Golden",
       "gender": "Male",
-      "description": "Friendly and energetic dog, great with families and kids."
+      "description": "Friendly and energetic dog, great with families and kids.",
+      "image": "/images/pets/max1.jpg"
     },
     {
       "id": "2",
@@ -18,7 +19,8 @@
       "breed": "Persian",
       "color": "White",
       "gender": "Female",
-      "description": "Calm and affectionate cat, enjoys cozy naps and attention."
+      "description": "Calm and affectionate cat, enjoys cozy naps and attention.",
+      "image": "/images/pets/luna.jpg"
     },
     {
       "id": "3",
